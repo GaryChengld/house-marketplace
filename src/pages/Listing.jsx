@@ -9,12 +9,12 @@ import { getAuth } from 'firebase/auth'
 import { db } from '../firebase.config'
 import Spinner from '../components/Spinner'
 import shareIcon from '../assets/svg/shareIcon.svg'
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
 function Listing() {
   const [listing, setListing] = useState(null)
   const [loading, setLoading] = useState(true)
   const [shareLinkCopied, setShareLinkCopied] = useState(false)
-  SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
   const navigate = useNavigate()
   const params = useParams()
@@ -45,7 +45,7 @@ function Listing() {
           <SwiperSlide key={index}>
             <div
               style={{
-                background: `url(${listing.imgUrls[index]}) center no-repeat`,
+                background: `url(${url}) center no-repeat`,
                 backgroundSize: 'cover',
               }}
               className='swiperSlideDiv'
